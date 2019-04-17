@@ -73,8 +73,8 @@ public class Practico2 {
         System.out.println("Eligio: "+ paymentMethods[codp].name);
 
         System.out.println("Escribir Latitud: ");
-
-        String latitud = "-35-012305";
+        String saltodelinea = myObj.nextLine();
+        String latitud = myObj.nextLine();
 
         System.out.println("Escribir longitud deseada: ");
 
