@@ -72,17 +72,21 @@ public class Practico2 {
 
         System.out.println("Eligio: "+ paymentMethods[codp].name);
 
-        System.out.println("Escribir latitud deseada: ");
+        System.out.println("Escribir Latitud: ");
 
+        String latitud = "-35-012305";
 
         System.out.println("Escribir longitud deseada: ");
 
+        String longitud = myObj.nextLine();
 
         System.out.println("Escribir radio de distancia deseado: ");
 
+        String radio = myObj.nextLine();
+
 
         try{
-            String data = readUrl("https://api.mercadolibre.com/sites/"+sites[cod].id+"/payment_methods/"+paymentMethods[codp].id+"/agencies?near_to=-31.419801,-64.188522,300");
+            String data = readUrl("https://api.mercadolibre.com/sites/"+sites[cod].id+"/payment_methods/"+paymentMethods[codp].id+"/agencies?near_to="+latitud+","+longitud+","+radio+"");
 
             JsonObject jsonObject = new JsonParser().parse(data).getAsJsonObject();
             Agency[] agencies = new Gson().fromJson(jsonObject.get("results"), Agency[].class);
